@@ -7,18 +7,22 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="../projects/">Projects</a>
-    <a href="index.html">Contact</a>
-    <a href="../cv/">CV</a>
-    <a href="https://github.com/JayManjrekar0827" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://www.linkedin.com/in/jay-manjrekar-789759276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-brand" href="../index.html">Jay Manjrekar</a>
+    <div class="nav-cluster">
+      <a href="../index.html">Home</a>
+      <a href="../projects/">Projects</a>
+      <a href="index.html" aria-current="page">Contact</a>
+      <a href="../cv/">CV</a>
+      <a href="https://github.com/JayManjrekar0827" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/jay-manjrekar-789759276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
   </nav>
 
-  <h1>Contact</h1>
+  <main class="page">
+    <h1>Contact</h1>
 
-  <form action="mailto:jaymanjrekar@gmail.com" method="POST" enctype="text/plain">
+    <form action="mailto:jaymanjrekar@gmail.com" method="POST" enctype="text/plain">
     <p>
       <label>
         Email
@@ -38,6 +42,7 @@
       </label>
     </p>
     <p><button>Send</button></p>
-  </form>
+    </form>
+  </main>
 </body>
 </html>
