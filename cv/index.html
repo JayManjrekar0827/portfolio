@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV — Your Name</title>
+  <title>CV — Jay Manjrekar</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -13,70 +13,116 @@
     <a href="../contact/">Contact</a>
     <a href="index.html">CV</a>
     <a href="https://github.com/JayManjrekar0827" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/jay-manjrekar-789759276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </nav>
 
-  <h1>Curriculum Vitae</h1>
-  <p><em>Sample résumé with placeholder data — replace with your real information or keep fictional details for privacy.</em></p>
-
-  <section id="summary">
-    <h2>Summary</h2>
-    <p>
-      Undergraduate student focused on data science, visualization, and front-end web
-      fundamentals. Interested in clear communication through code and design.
-    </p>
-  </section>
+  <h1>Jay Manjrekar</h1>
+  <p>
+    <a href="tel:+18584008006">858-400-8006</a> ·
+    <a href="mailto:jaymanjrekar@gmail.com">jaymanjrekar@gmail.com</a> ·
+    <a href="https://www.linkedin.com/in/jay-manjrekar-789759276" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </p>
 
   <section id="education">
     <h2>Education</h2>
     <article>
       <header>
-        <h3>B.S. in Data Science (example)</h3>
-        <p><time datetime="2024-09">September 2024</time> — present · Example University</p>
+        <h3>University of California, San Diego</h3>
+        <p>B.S. in Computer Science and Mathematics · Graduation <time datetime="2027-06">June 2027</time></p>
       </header>
-      <p>Relevant coursework: visualization, statistics, programming, human–computer interaction.</p>
-    </article>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <article>
-      <header>
-        <h3>Peer tutor — Introductory programming</h3>
-        <p><time datetime="2025-01">January 2025</time> — present · Example University Learning Center</p>
-      </header>
-      <ul>
-        <li>Helped students debug assignments and understand core concepts.</li>
-        <li>Held weekly drop-in hours and one-on-one sessions.</li>
-      </ul>
-    </article>
-    <article>
-      <header>
-        <h3>Summer intern — Data assistant (example)</h3>
-        <p><time datetime="2024-06">June 2024</time> — <time datetime="2024-08">August 2024</time> · Example Nonprofit</p>
-      </header>
-      <ul>
-        <li>Cleaned and summarized spreadsheets for monthly reports.</li>
-        <li>Documented data definitions for handoff to analysts.</li>
-      </ul>
+      <p><strong>Relevant coursework:</strong> Algorithms, data structures, computer architecture, linear algebra, multivariable calculus, probability, machine learning, AI foundations, data engineering, data visualization.</p>
     </article>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Languages: Python, HTML, CSS (learning)</li>
-      <li>Tools: Git, GitHub, VS Code / Cursor</li>
-    </ul>
+    <p>
+      Java, Python, C++, JavaScript/TypeScript, Bash, CUDA, PyTorch, TensorFlow, Hugging Face Transformers, vLLM, LangChain,
+      FAISS, FastAPI, Airflow, Kafka, Redis, PostgreSQL, MongoDB, Elasticsearch, Docker, Kubernetes, AWS, Git
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <article>
+      <header>
+        <h3>Yardi Systems — Software Engineering &amp; AI Intern</h3>
+        <p><time datetime="2025-07">July 2025</time> – <time datetime="2025-09">September 2025</time> · Oxnard, CA</p>
+      </header>
+      <ul>
+        <li>Reduced move-in prediction error by 23% (14.2 to 10.9 days MAE) across 50k+ records using XGBoost.</li>
+        <li>Built batch scoring pipeline with Airflow orchestration and schema validation (~99% uptime) for property data.</li>
+        <li>Implemented GPT-4o explainability API with FastAPI and PostgreSQL for manager-facing dashboards.</li>
+        <li>Architected versioned model registry with Docker, MLflow, and Kafka for deployments and rollbacks.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>ByteSized AI — AI Engineering Intern</h3>
+        <p><time datetime="2025-04">April 2025</time> – <time datetime="2025-06">June 2025</time> · Remote</p>
+      </header>
+      <ul>
+        <li>Cut invoice review time by 50% (8 to 4 hours) on 10k+ monthly documents with Azure Document Intelligence.</li>
+        <li>Optimized retrieval to p95 under 200ms across 500k+ documents using Elasticsearch and Redis.</li>
+        <li>Improved reliability for 50+ clients with MongoDB backups, Prometheus dashboards, and alerting.</li>
+        <li>Built FastAPI microservices with RabbitMQ and Azure Key Vault for secure document workflows.</li>
+        <li>Deployed to Kubernetes with health probes, HPA, and Prometheus monitoring.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>General Atomics — Automated Testing Intern</h3>
+        <p><time datetime="2024-06">June 2024</time> – <time datetime="2024-08">August 2024</time> · Poway, CA</p>
+      </header>
+      <ul>
+        <li>Accelerated CI/CD by 25% (45 to 34 minutes) by containerizing suites with Docker and parallelizing 200+ tests.</li>
+        <li>Reduced test flakiness by 40% (15% to 9%) with Maven profiles, JUnit retries, and isolation.</li>
+        <li>Used Cucumber and Gherkin for behavior-driven scenarios across technical and non-technical stakeholders.</li>
+        <li>Automated reporting with Bash and Groovy in Jenkins for dashboards and failure analysis.</li>
+      </ul>
+    </article>
   </section>
 
   <section id="projects">
-    <h2>Selected projects</h2>
+    <h2>Projects</h2>
+
     <article>
       <header>
-        <h3>Personal portfolio site</h3>
+        <h3>Domain Search Accelerator — UFC RAG platform</h3>
+        <p><time datetime="2025-07">July 2025</time> – <time datetime="2025-09">September 2025</time> · Lead developer</p>
       </header>
-      <p>Static multi-page site hosted on GitHub Pages; includes contact form and CV.</p>
-      <p><a href="../projects/">See Projects page</a> for more as you add them.</p>
+      <ul>
+        <li>Led three developers; 10k+ daily UFC stats responses at ~2.3s latency with hybrid search.</li>
+        <li>AWS ECS Fargate and Lambda for spikes during events.</li>
+        <li>FastAPI with FAISS, Redis, PostgreSQL; LangChain hybrid lexical + semantic retrieval.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>Triton NeuroTech Research Group</h3>
+        <p><time datetime="2024-12">December 2024</time> – present · Latent diffusion on brain images</p>
+      </header>
+      <ul>
+        <li>Preprocessing raised fMRI accuracy from 73% to 85% on 15k+ scans (VAE encoder–decoder).</li>
+        <li>PyTorch pipeline with CLIP embeddings and experiment tracking.</li>
+        <li>Augmentation, noise injection, cross-attention; ~30% faster epochs via mixed precision and I/O.</li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
+        <h3>BlogNorte — social blogging platform</h3>
+        <p><time datetime="2023-12">December 2023</time> – <time datetime="2024-01">January 2024</time> · Founder &amp; full-stack</p>
+      </header>
+      <ul>
+        <li>MERN app: 50+ users, 400+ posts, 200+ comments in four months.</li>
+        <li>CI/CD reduced deploy time from ~2 hours to ~5 minutes.</li>
+        <li>Real-time threading and notifications with WebSockets.</li>
+      </ul>
     </article>
   </section>
 </body>
