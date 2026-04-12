@@ -199,7 +199,7 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.page article {
+.page section article {
   margin-bottom: 1.25rem;
   padding: 1.15rem 1.25rem 1.25rem;
   background: var(--surface);
@@ -209,13 +209,13 @@ body {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.page article:hover {
+.page section article:hover {
   border-color: var(--border-strong);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
 }
 
-.page article header h2,
-.page article header h3 {
+.page section article header h2,
+.page section article header h3 {
   margin: 0 0 0.35rem;
   font-size: 1.05rem;
   font-weight: 650;
@@ -223,13 +223,13 @@ body {
   color: var(--text);
 }
 
-.page article header p {
+.page section article header p {
   margin: 0;
   font-size: 0.88rem;
   color: var(--text-muted);
 }
 
-.page article > p {
+.page section article > p {
   margin: 0.75rem 0 0;
   color: var(--text-muted);
 }
@@ -240,18 +240,61 @@ body {
   line-height: 1.65;
 }
 
-.page article ul {
+.page section article ul {
   margin: 0.85rem 0 0;
   padding-left: 1.15rem;
   color: var(--text-muted);
 }
 
-.page article li {
+.page section article li {
   margin-bottom: 0.4rem;
 }
 
-.page article li::marker {
+.page section article li::marker {
   color: var(--color-accent);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+  margin-top: 1.25rem;
+}
+
+.projects > article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 0.75em;
+  margin: 0;
+  padding: 1em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projects > article h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.projects > article img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.projects > article p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 .contact-form {
