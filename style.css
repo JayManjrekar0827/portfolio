@@ -388,3 +388,28 @@ body {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
+
+.cv {
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+}
+
+.cv > p:first-of-type {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.cv section > h2 {
+  position: relative;
+  padding-left: 0.5em;
+  border-left: 0.25em solid var(--color-accent);
+}
+
+.page.cv section article {
+  border-left: 2px solid color-mix(in oklch, var(--color-accent) 38%, transparent);
+}
+
+.cv #skills p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
