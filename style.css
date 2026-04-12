@@ -146,10 +146,9 @@ body {
 
 .page > h1 {
   margin: 0 0 0.5rem;
-  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-size: 400%;
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.2;
   background: linear-gradient(120deg, #fff 0%, #c8d8ec 55%, #8eb8e8 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -175,7 +174,7 @@ body {
   color: #8cc8ff;
 }
 
-.page img {
+.page > img {
   display: block;
   max-width: min(320px, 100%);
   height: auto;
