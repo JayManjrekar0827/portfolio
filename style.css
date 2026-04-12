@@ -52,6 +52,10 @@ h6 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+
+  .page section article:hover {
+    transform: none;
+  }
 }
 
 body {
@@ -205,12 +209,17 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transform: translateY(0);
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .page section article:hover {
+  transform: translateY(-3px);
   border-color: var(--border-strong);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
 }
 
 .page section article header h2,
