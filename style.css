@@ -335,10 +335,21 @@ body {
   top: 1rem;
   right: 1rem;
   z-index: 200;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: min(14rem, calc(100vw - 2rem));
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.45);
   font-size: 80%;
 }
 
 .color-scheme select {
+  flex: 1 1 auto;
+  min-width: 6.5rem;
+  max-width: 100%;
   font: inherit;
 }
 
