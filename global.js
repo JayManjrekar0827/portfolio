@@ -27,7 +27,7 @@ function isCurrentPage(a) {
   );
 }
 
-let pages = [
+const pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
   { url: "contact/", title: "Contact" },
@@ -48,28 +48,28 @@ document.body.insertAdjacentHTML(
   </label>`,
 );
 
-let nav = document.createElement("nav");
+const nav = document.createElement("nav");
 nav.className = "site-nav";
 nav.setAttribute("aria-label", "Primary");
 
-let brand = document.createElement("a");
+const brand = document.createElement("a");
 brand.className = "nav-brand";
 brand.href = BASE_PATH;
 brand.textContent = "Jay Manjrekar";
 nav.append(brand);
 
-let ul = document.createElement("ul");
+const ul = document.createElement("ul");
 nav.append(ul);
 
-for (let p of pages) {
+for (const p of pages) {
   let url = p.url;
   url = !url.startsWith("http") ? BASE_PATH + url : url;
 
-  let a = document.createElement("a");
+  const a = document.createElement("a");
   a.href = url;
   a.textContent = p.title;
 
-  let li = document.createElement("li");
+  const li = document.createElement("li");
   li.append(a);
   ul.append(li);
 
@@ -103,3 +103,60 @@ if ("colorScheme" in localStorage) {
 } else if (select) {
   select.value = "light dark";
 }
+
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch JSON from ${url}: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching or parsing JSON data:", error);
+    return [];
+  }
+}
+
+function normalizeHeadingLevel(headingLevel) {
+  return /^h[1-6]$/.test(headingLevel) ? headingLevel : "h2";
+}
+
+export function renderProjects(projects, containerElement, headingLevel = "h2") {
+  if (!(containerElement instanceof Element)) {
+    console.error("renderProjects expected a valid container element.");
+    return;
+  }
+
+  containerElement.innerHTML = "";
+
+  if (!Array.isArray(projects) || projects.length === 0) {
+    containerElement.innerHTML = "<p>No projects available yet.</p>";
+    return;
+  }
+
+  const safeHeading = normalizeHeadingLevel(headingLevel);
+
+  for (const project of projects) {
+    const article = document.createElement("article");
+
+    const title = project.title ?? "Untitled Project";
+    const image = project.image ?? "https://vis-society.github.io/labs/2/images/empty.svg";
+    const description = project.description ?? "Description coming soon.";
+
+    article.innerHTML = `
+      <${safeHeading}>${title}</${safeHeading}>
+      <img src="${image}" alt="${title}">
+      <p>${description}</p>
+    `;
+
+    containerElement.appendChild(article);
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
+
+export { $$, BASE_PATH };
