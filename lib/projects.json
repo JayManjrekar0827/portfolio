@@ -18,34 +18,34 @@
     "description": "MERN stack app with auth, CI/CD, and WebSockets for comments and notifications."
   },
   {
-    "title": "Lorem ipsum dolor sit",
+    "title": "Mock — Chain Sense (crypto portfolio tracker)",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Mock project: a toy dashboard that pretends to aggregate wallet balances and token prices from fake RPC responses. Not production code—just UI and placeholder JSON for experimenting with charts."
+  },
+  {
+    "title": "Mock — Ledger Lint CLI",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Mock project: a pretend command-line tool that scans a folder of made-up transaction CSVs and prints silly warnings like “gas vibes too high.” Built to practice argparse and terminal output formatting."
+  },
+  {
+    "title": "Mock — MemeCoin Price Pinger",
+    "year": "2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Mock project: polls random number generators shaped like price ticks, logs them to stdout, and occasionally prints “moon” when the fake RSI crosses 70. No real exchange integration."
+  },
+  {
+    "title": "Mock — On-chain Alert Bot",
     "year": "2023",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    "description": "Mock project: listens to a hardcoded list of fake contract addresses and sends console alerts when a counter increments. Useful only as a sandbox for async loops and backoff timers."
   },
   {
-    "title": "Amet consectetur adipiscing",
-    "year": "2022",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "title": "Elit sed do eiusmod",
-    "year": "2021",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-  },
-  {
-    "title": "Tempor incididunt ut labore",
+    "title": "Mock — Wallet Dashboard UI",
     "year": "2023",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    "title": "Magna aliqua ut enim",
-    "year": "2020",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem."
+    "description": "Mock project: static HTML/CSS layout for a crypto-style wallet overview with donut charts fed by hand-written JSON. Purely visual; numbers are not real."
   },
   {
     "title": "Quis nostrud exercitation",
