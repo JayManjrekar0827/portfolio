@@ -300,11 +300,123 @@ body {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.projects > article p {
+.projects > article .project-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.projects > article .project-copy > p {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.5;
   color: var(--text-muted);
+}
+
+.projects > article .project-year {
+  margin: 0;
+  font-family: Baskerville, "Palatino Linotype", Palatino, "Times New Roman", serif;
+  font-variant-numeric: oldstyle-nums;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  opacity: 0.9;
+}
+
+.projects-viz {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects-pie-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.25rem 1.75rem;
+}
+
+#projects-pie-plot {
+  flex: 0 0 auto;
+  max-width: 20em;
+  width: min(20em, 100%);
+  overflow: visible;
+}
+
+#projects-pie-plot path {
+  cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    fill 0.3s ease;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+.selected:is(path) {
+  fill: var(--color);
+}
+
+.legend {
+  flex: 1 1 12em;
+  list-style: none;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.45rem 0.65rem;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.legend-row .swatch {
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 3px;
+  background: var(--color);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.legend-row em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.legend-row.selected,
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+.searchBar {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 40rem;
+  margin-top: 1rem;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: color-mix(in oklch, var(--color-accent) 65%, white);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 22%, transparent);
 }
 
 .contact-form {
