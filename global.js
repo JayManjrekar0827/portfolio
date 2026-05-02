@@ -151,7 +151,7 @@ export function renderProjects(projects, containerElement, headingLevel = "h2") 
       <img src="${image}" alt="${title}">
       <div class="project-copy">
         <p>${description}</p>
-        ${year ? `<p class="project-year">${year}</p>` : ""}
+        ${year ? `<p class="project-year">c. ${year}</p>` : ""}
       </div>
     `;
 
