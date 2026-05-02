@@ -10,6 +10,19 @@
   <main class="page">
     <h1 class="projects-title">Projects</h1>
 
+    <div class="projects-viz">
+      <div class="projects-pie-layout">
+        <svg id="projects-pie-plot" viewBox="-50 -50 100 100" role="img" aria-label="Projects per year"></svg>
+        <ul class="legend"></ul>
+      </div>
+      <input
+        class="searchBar"
+        type="search"
+        aria-label="Search projects"
+        placeholder="Search projects…"
+      >
+    </div>
+
     <div class="projects"></div>
   </main>
   <script type="module" src="../global.js"></script>
