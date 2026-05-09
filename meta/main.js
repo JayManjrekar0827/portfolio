@@ -45,8 +45,7 @@ function processCommits(data) {
       });
 
       return ret;
-    })
-    .sort((a, b) => a.datetime - b.datetime);
+    });
 }
 
 function renderCommitInfo(data, commits) {
@@ -76,10 +75,6 @@ function renderCommitInfo(data, commits) {
   dl.append("dt").text("Avg file length");
   dl.append("dd").text(`${Math.round(avgFileLength)} lines`);
 
-  const maxDepth = d3.max(data, (d) => d.depth);
-  dl.append("dt").text("Max indentation");
-  dl.append("dd").text(maxDepth);
-
   const workByPeriod = d3.rollups(
     data,
     (v) => v.length,
@@ -103,7 +98,7 @@ function renderTooltipContent(commit) {
   }
 
   link.href = commit.url;
-  link.textContent = commit.id.slice(0, 7);
+  link.textContent = commit.id;
   date.textContent = commit.datetime?.toLocaleString("en", {
     dateStyle: "full",
   });
@@ -121,22 +116,8 @@ function updateTooltipVisibility(isVisible) {
 
 function updateTooltipPosition(event) {
   const tooltip = document.getElementById("commit-tooltip");
-  const padding = 14;
-  const { innerWidth, innerHeight } = window;
-  const rect = tooltip.getBoundingClientRect();
-
-  let left = event.clientX + padding;
-  let top = event.clientY + padding;
-
-  if (left + rect.width > innerWidth - 8) {
-    left = event.clientX - rect.width - padding;
-  }
-  if (top + rect.height > innerHeight - 8) {
-    top = event.clientY - rect.height - padding;
-  }
-
-  tooltip.style.left = `${Math.max(8, left)}px`;
-  tooltip.style.top = `${Math.max(8, top)}px`;
+  tooltip.style.left = `${event.clientX}px`;
+  tooltip.style.top = `${event.clientY}px`;
 }
 
 function isCommitSelected(selection, commit) {
@@ -293,9 +274,6 @@ function renderScatterPlot(data, commits) {
       d3.select(event.currentTarget).style("fill-opacity", 1);
       renderTooltipContent(commit);
       updateTooltipVisibility(true);
-      updateTooltipPosition(event);
-    })
-    .on("mousemove", (event) => {
       updateTooltipPosition(event);
     })
     .on("mouseleave", (event) => {
