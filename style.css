@@ -636,3 +636,104 @@ body {
   color: var(--text);
   word-break: break-word;
 }
+
+#chart {
+  margin-top: 0.75rem;
+}
+
+#chart svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+#chart .axis path,
+#chart .axis line {
+  stroke: rgba(255, 255, 255, 0.18);
+}
+
+#chart .axis text {
+  fill: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+#chart .gridlines line {
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-dasharray: 2 4;
+}
+
+#chart .gridlines path {
+  display: none;
+}
+
+#chart circle {
+  transition:
+    fill-opacity 200ms ease,
+    transform 200ms ease,
+    fill 200ms ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#chart circle:hover {
+  transform: scale(1.18);
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.85rem;
+  margin: 0;
+  padding: 0.75rem 0.95rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: rgba(18, 25, 34, 0.92);
+  color: var(--text);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition-duration: 250ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  align-self: center;
+}
+
+dl.info dd {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text);
+}
+
+dl.info a {
+  color: var(--color-accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-decoration: none;
+}
+
+dl.info a:hover {
+  text-decoration: underline;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 500;
+  pointer-events: none;
+  max-width: 22rem;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
