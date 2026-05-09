@@ -32,6 +32,7 @@ const pages = [
   { url: "projects/", title: "Projects" },
   { url: "contact/", title: "Contact" },
   { url: "cv/", title: "CV" },
+  { url: "meta/", title: "Meta" },
   { url: "https://github.com/JayManjrekar0827", title: "GitHub" },
   { url: "https://www.linkedin.com/in/jay-manjrekar-789759276", title: "LinkedIn" },
 ];
