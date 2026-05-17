@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching — Boston bike traffic map",
+    "year": "2026",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Interactive Mapbox + D3 visualization of BlueBikes stations, bike lanes, and March 2024 ride traffic with time-of-day filtering and arrival vs. departure flow.",
+    "url": "https://jaymanjrekar0827.github.io/DSC106_Lab7/"
+  },
+  {
     "title": "Domain Search Accelerator — UFC RAG platform",
     "year": "2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",

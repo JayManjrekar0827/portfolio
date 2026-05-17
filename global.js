@@ -146,6 +146,7 @@ export function renderProjects(projects, containerElement, headingLevel = "h2") 
     const image = project.image ?? "https://vis-society.github.io/labs/2/images/empty.svg";
     const description = project.description ?? "Description coming soon.";
     const year = project.year != null && project.year !== "" ? String(project.year) : "";
+    const url = project.url != null && project.url !== "" ? String(project.url) : "";
 
     article.innerHTML = `
       <${safeHeading}>${title}</${safeHeading}>
@@ -153,6 +154,7 @@ export function renderProjects(projects, containerElement, headingLevel = "h2") 
       <div class="project-copy">
         <p>${description}</p>
         ${year ? `<p class="project-year">c. ${year}</p>` : ""}
+        ${url ? `<p><a href="${url}" target="_blank" rel="noopener noreferrer">View project</a></p>` : ""}
       </div>
     `;
 
