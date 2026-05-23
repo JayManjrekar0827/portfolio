@@ -286,6 +286,42 @@ function renderScatterPlot(data, commits) {
   createBrushSelector(svg);
 }
 
+const fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
+
+function updateFileDisplay(filteredCommits) {
+  const lines = filteredCommits.flatMap((d) => d.lines);
+  const files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => ({ name, lines }))
+    .sort((a, b) => b.lines.length - a.lines.length);
+
+  const filesContainer = d3
+    .select("#files")
+    .selectAll("div")
+    .data(files, (d) => d.name)
+    .join((enter) =>
+      enter.append("div").call((div) => {
+        div.append("dt").append("code");
+        div.append("dd");
+      }),
+    );
+
+  filesContainer
+    .select("dt > code")
+    .html(
+      (d) =>
+        `${d.name}<small>${d.lines.length} lines</small>`,
+    );
+
+  filesContainer
+    .select("dd")
+    .selectAll("div")
+    .data((d) => d.lines)
+    .join("div")
+    .attr("class", "loc")
+    .attr("style", (d) => `--color: ${fileTypeColors(d.type)}`);
+}
+
 function updateScatterPlot(data, commits) {
   const width = 1000;
   const height = 600;
@@ -375,6 +411,7 @@ function onTimeSliderChange() {
 
   updateScatterPlot(data, filteredCommits);
   renderCommitInfo(filteredLines, filteredCommits);
+  updateFileDisplay(filteredCommits);
 }
 
 document

@@ -670,6 +670,65 @@ body {
   white-space: nowrap;
 }
 
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 0.4rem 1rem;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+  word-break: break-word;
+}
+
+#files dt > code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: none;
+  padding: 0;
+}
+
+#files dt > code small {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.55em;
+  margin: 0;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
 #chart {
   margin-top: 0.75rem;
 }
