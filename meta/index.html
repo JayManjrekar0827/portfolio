@@ -29,12 +29,16 @@
 
     <section>
       <h2>Commits by time of day</h2>
-      <div id="chart"></div>
-    </section>
-
-    <section id="selection-summary">
-      <p id="selection-count">No commits selected</p>
-      <dl id="language-breakdown" class="stats languages"></dl>
+      <div id="scrolly-1">
+        <div id="scatter-story"></div>
+        <div id="scatter-plot">
+          <div id="chart"></div>
+          <div id="selection-summary">
+            <p id="selection-count">No commits selected</p>
+            <dl id="language-breakdown" class="stats languages"></dl>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -50,7 +54,7 @@
       <dd id="commit-date"></dd>
 
       <dt>Time</dt>
-      <dd id="commit-time"></dd>
+      <dd id="tooltip-time"></dd>
 
       <dt>Author</dt>
       <dd id="commit-author"></dd>

@@ -729,6 +729,69 @@ body {
   border-radius: 50%;
 }
 
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+  min-width: 0;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-story .step {
+  padding: 35vh 0 35vh;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+#scatter-story .step a {
+  color: var(--color-accent);
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 1rem;
+  left: 0;
+  bottom: auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#scatter-plot #chart {
+  flex: 1;
+  min-height: 0;
+}
+
+#scatter-plot #chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 720px) {
+  #scrolly-1 {
+    flex-direction: column;
+  }
+
+  #scatter-plot {
+    position: sticky;
+    height: 60vh;
+  }
+
+  #scatter-story .step {
+    padding: 20vh 0;
+  }
+}
+
 #chart {
   margin-top: 0.75rem;
 }

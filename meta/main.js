@@ -1,4 +1,5 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
+import scrollama from "https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm";
 
 const REPO_URL = "https://github.com/JayManjrekar0827/portfolio";
 
@@ -90,7 +91,7 @@ function renderCommitInfo(data, commits) {
 function renderTooltipContent(commit) {
   const link = document.getElementById("commit-link");
   const date = document.getElementById("commit-date");
-  const time = document.getElementById("commit-time");
+  const time = document.getElementById("tooltip-time");
   const author = document.getElementById("commit-author");
   const lines = document.getElementById("commit-lines");
 
@@ -418,3 +419,63 @@ document
   .getElementById("commit-progress")
   .addEventListener("input", onTimeSliderChange);
 onTimeSliderChange();
+
+d3.select("#scatter-story")
+  .selectAll(".step")
+  .data(commits)
+  .join("div")
+  .attr("class", "step")
+  .html(
+    (d, i) => `
+      On ${d.datetime.toLocaleString("en", {
+        dateStyle: "full",
+        timeStyle: "short",
+      })},
+      I made <a href="${d.url}" target="_blank">${
+        i > 0
+          ? "another glorious commit"
+          : "my first commit, and it was glorious"
+      }</a>.
+      I edited ${d.totalLines} lines across ${
+        d3.rollups(
+          d.lines,
+          (D) => D.length,
+          (d) => d.file,
+        ).length
+      } files.
+      Then I looked over all I had made, and I saw that it was very good.
+    `,
+  );
+
+function onStepEnter(response) {
+  const stepDate = response.element.__data__.datetime;
+  commitMaxTime = stepDate;
+  commitProgress = timeScale(stepDate);
+
+  const slider = document.getElementById("commit-progress");
+  slider.value = commitProgress;
+
+  const timeEl = document.getElementById("commit-time");
+  timeEl.textContent = commitMaxTime.toLocaleString("en", {
+    dateStyle: "long",
+    timeStyle: "short",
+  });
+
+  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  const filteredLines = data.filter((d) => d.datetime <= commitMaxTime);
+
+  updateScatterPlot(data, filteredCommits);
+  renderCommitInfo(filteredLines, filteredCommits);
+  updateFileDisplay(filteredCommits);
+}
+
+const scroller = scrollama();
+scroller
+  .setup({
+    container: "#scrolly-1",
+    step: "#scrolly-1 .step",
+    offset: 0.5,
+  })
+  .onStepEnter(onStepEnter);
+
+window.addEventListener("resize", () => scroller.resize());
