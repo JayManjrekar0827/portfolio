@@ -637,6 +637,39 @@ body {
   word-break: break-word;
 }
 
+.slider-row {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.slider-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--color-accent);
+  min-width: 0;
+}
+
+.slider-row time {
+  margin-left: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
 #chart {
   margin-top: 0.75rem;
 }
@@ -668,12 +701,13 @@ body {
 }
 
 #chart circle {
-  transition:
-    fill-opacity 200ms ease,
-    transform 200ms ease,
-    fill 200ms ease;
+  transition: all 200ms, r calc(var(--r, 5) * 100ms);
   transform-origin: center;
   transform-box: fill-box;
+
+  @starting-style {
+    r: 0;
+  }
 }
 
 #chart circle:hover {
